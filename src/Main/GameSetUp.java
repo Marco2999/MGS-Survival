@@ -1,6 +1,7 @@
 package Main;
 
 import Display.DisplayScreen;
+import Game.GameStates.GameOver;
 import Game.GameStates.GameState;
 import Game.GameStates.MenuState;
 import Game.GameStates.PauseState;
@@ -45,6 +46,7 @@ public class GameSetUp implements Runnable {
     public State gameState;
     public State menuState;
     public State pauseState;
+    public State overState;
 
     //Res.music
     private InputStream audioFile;
@@ -81,6 +83,7 @@ public class GameSetUp implements Runnable {
         gameState = new GameState(handler);
         menuState = new MenuState(handler);
         pauseState = new PauseState(handler);
+        overState = new GameOver(handler);
 
         State.setState(menuState);
 
@@ -130,6 +133,7 @@ public class GameSetUp implements Runnable {
         int ticks = 0;
 
         while(running){
+        	
             //makes sure the games runs smoothly at 60 FPS
             now = System.nanoTime();
             delta += (now - lastTime) / timePerTick;

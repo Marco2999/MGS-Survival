@@ -151,7 +151,6 @@ public class Player {
     }
 
     public void render(Graphics g,Boolean[][] playeLocation){
-        Random r = new Random();
         Font stringFont = new Font( "SansSerif", Font.PLAIN, 35 );
         g.setFont(stringFont);
         g.setColor(Color.GRAY);

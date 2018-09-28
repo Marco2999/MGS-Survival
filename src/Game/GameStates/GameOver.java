@@ -7,16 +7,29 @@ import UI.UIImageButton;
 import UI.UIManager;
 
 import java.awt.*;
+import java.io.IOException;
+import java.io.InputStream;
+
+import javax.sound.sampled.AudioFormat;
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+import javax.sound.sampled.DataLine;
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
 
 /**
  * Created by AlexVR on 7/1/2018.
  */
+
+
 public class GameOver extends State {
 
     private int count = 0;
     private UIManager uiManager;
 
     public GameOver(Handler handler) {
+    	
         super(handler);
         uiManager = new UIManager(handler);
         handler.getMouseManager().setUimanager(uiManager);
@@ -31,21 +44,14 @@ public class GameOver extends State {
         }));
 
 
-        uiManager.addObjects(new UIImageButton(56, 223+(64+16), 128, 64, Images.Options, () -> {
-            handler.getMouseManager().setUimanager(null);
-            State.setState(handler.getGame().menuState);
-        }));
-
         uiManager.addObjects(new UIImageButton(56, (223+(64+16))+(64+16), 128, 64, Images.BTitle, () -> {
             handler.getMouseManager().setUimanager(null);
             State.setState(handler.getGame().menuState);
-        }));
+        }));}
 
 
 
-
-
-    }
+    
 
     @Override
     public void tick() {
@@ -70,4 +76,7 @@ public class GameOver extends State {
         uiManager.Render(g);
 
     }
+    public static void playmusic(String filepath) {
+    
+}
 }

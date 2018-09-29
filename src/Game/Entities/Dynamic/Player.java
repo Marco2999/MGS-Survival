@@ -153,7 +153,7 @@ public class Player {
     public void render(Graphics g,Boolean[][] playeLocation){
         Font stringFont = new Font( "SansSerif", Font.PLAIN, 35 );
         g.setFont(stringFont);
-        g.setColor(Color.GRAY);
+        g.setColor(Color.BLACK);
         g.drawString("Score: " + Integer.toString(count), 610, 30);
         for (int i = 0; i < handler.getWorld().GridWidthHeightPixelCount; i++) {
             for (int j = 0; j < handler.getWorld().GridWidthHeightPixelCount; j++) {

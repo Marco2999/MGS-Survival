@@ -14,6 +14,7 @@ public class Images {
 
 
     public static BufferedImage GameOver;
+    public static BufferedImage SNAKE;
 	public static BufferedImage[] butstart;
     public static BufferedImage title;
     public static BufferedImage Pause;

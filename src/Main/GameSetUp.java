@@ -87,28 +87,7 @@ public class GameSetUp implements Runnable {
 
         State.setState(menuState);
     }
-//        try {
-//
-//            audioFile = getClass().getResourceAsStream("/music/MGSMain.wav");
-//            audioStream = AudioSystem.getAudioInputStream(audioFile);
-//            format = audioStream.getFormat();
-//            info = new DataLine.Info(Clip.class, format);
-//            audioClip = (Clip) AudioSystem.getLine(info);
-//            audioClip.open(audioStream);
-//            audioClip.loop(Clip.LOOP_CONTINUOUSLY);
-//
-//        } catch (UnsupportedAudioFileException e) {
-//            e.printStackTrace();
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        } catch (LineUnavailableException e) {
-//            e.printStackTrace();
-//        }
-//    }
-//<<<<<<< HEAD
-//=======
-//
-//>>>>>>> refs/heads/ChangingDeadPicture
+
 
     public void reStart(){
         gameState = new GameState(handler);

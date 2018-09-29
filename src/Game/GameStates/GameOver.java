@@ -7,6 +7,7 @@ import UI.UIImageButton;
 import UI.UIManager;
 
 import java.awt.*;
+import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.io.InputStream;
 
@@ -27,6 +28,7 @@ public class GameOver extends State {
 
     private int count = 0;
     private UIManager uiManager;
+    
 
     public GameOver(Handler handler) {
     	
@@ -34,7 +36,7 @@ public class GameOver extends State {
         uiManager = new UIManager(handler);
         handler.getMouseManager().setUimanager(uiManager);
         
-        uiManager.addObjects(new UIImageButton(56, 223, 128, 64, Images.butstart, new ClickListlener() {
+        uiManager.addObjects(new UIImageButton(100, (223+(64+16))+(64+16), 128, 64, Images.butstart, new ClickListlener() {
             @Override
             public void onClick() {
                 handler.getMouseManager().setUimanager(null);
@@ -44,7 +46,7 @@ public class GameOver extends State {
         }));
 
 
-        uiManager.addObjects(new UIImageButton(56, (223+(64+16))+(64+16), 128, 64, Images.BTitle, () -> {
+        uiManager.addObjects(new UIImageButton(500, (223+(64+16))+(64+16), 128, 64, Images.BTitle, () -> {
             handler.getMouseManager().setUimanager(null);
             State.setState(handler.getGame().menuState);
         }));}
@@ -72,7 +74,7 @@ public class GameOver extends State {
 
     @Override
     public void render(Graphics g) {
-        g.drawImage(Images.SNAKE,0,0,800,800,null);
+        g.drawImage(Images.SNAKE,0,0,790,800,null);
         uiManager.Render(g);
 
     }
